@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Ordering Website</title>
+    <link rel="stylesheet" href="styless.css">
+    <script src="scriptt.js" defer></script>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#" onclick="goToHome()">Home</a></li>
+            <li><a href="#" onclick="goToReviews()">Reviews</a></li>
+            <li><a href="#" onclick="goToCart()">Cart for You</a></li>
+            <li><a href="#" onclick="goToBestSellers()">Best Sellers</a></li>
+            <li><a href="#" onclick="goToNew()">New</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page active">
+        
+        <main>
+            <header>
+                <h1 style="color: white;">Welcome to Pizza World!</h1>
+            </header>
+            <div class="container">
+            <img src="pizza.jpeg" alt="Delicious Pizza" class="home-image">
+            </div>
+
+            <button class="cta-btn" onclick="goToCustomization()">Order Now</button>
+        </main>
+    </div>
+
+    <!-- Reviews Page -->
+    <div id="reviewsPage" class="page">
+        <header>
+            <h1>Customer Reviews</h1>
+        </header>
+        <main>
+            <p>Here's what our customers are saying!</p>
+            <ul>
+                <li>"Best pizza I've ever had!" - John Doe</li> <br>
+                <li>"Fast delivery and delicious toppings!" - Jane Smith</li> <br>
+                <li>"Loved the customization options!" - Emily Jones</li>  <br>
+            </ul>
+
+            <!-- Review Videos -->
+            <div class="review-videos">
+                <h2>Watch Our Customer Reviews</h2>
+
+                <!-- Video 1-->
+                <!-- <video controls width="320">
+                    <source src="review3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/607PIJjY_Yg?si=VI6ksgQ3N3BGVSzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </main>
+    </div>
+
+    <!-- Cart for You Page -->
+    <div id="cartPage" class="page">
+        <header>
+            <h1>Your Cart</h1>
+        </header>
+        <main>
+            <p>You currently have no items in your cart.</p>
+            <button onclick="goToCustomization()">Add Items to Cart</button>
+        </main>
+    </div>
+
+    <!-- Best Sellers Page -->
+    <div id="bestSellersPage" class="page">
+        <header>
+            <h1>Best Sellers</h1>
+        </header>
+        <main>
+            <div class="best-sellers">
+                <div class="pizza-item">
+                    <img src="pepproni pizzza.jpeg" alt="Pepperoni Pizza">
+                    <p>Pepperoni Pizza</p>
+                </div>
+                <div class="pizza-item">
+                    <img src="Margherita Pizza.jpeg" alt="Margherita Pizza">
+                    <p>Margherita Pizza</p>
+                </div>
+                <div class="pizza-item">
+                    <img src="bbq chicken.jpeg" alt="BBQ Chicken Pizza">
+                    <p>BBQ Chicken Pizza</p>
+                </div>
+                <div class="pizza-item">
+                    <img src="veggie supreme.jpeg" alt="Veggie Supreme Pizza">
+                    <p>Veggie Supreme Pizza</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- New Items Page -->
+    <div id="newPage" class="page">
+        <header>
+            <h1>What's New?</h1>
+        </header>
+        <main>
+            <div class="new-pizzas">
+                <div class="pizza-item">
+                    <img src="Buffalo Chicken Pizza.jpeg" alt="Buffalo Chicken Pizza">
+                    <p>Buffalo Chicken Pizza</p>
+                </div>
+                <div class="pizza-item">
+                    <img src="Truffle Mushroom Pizza.jpeg" alt="Truffle Mushroom Pizza">
+                    <p>Truffle Mushroom Pizza</p>
+                </div>
+                <div class="pizza-item">
+                <img src="Vegan Special Pizza.jpeg" alt="Vegan Special Pizza">
+                    <p>Vegan Special Pizza</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Customization Page -->
+    <div id="customizationPage" class="page">
+        <header>
+            <h1>Customize Your Pizza</h1>
+        </header>
+        <main>
+            <form id="pizzaForm">
+                <label for="pizzaType">Select Pizza Type:</label>
+            <select id="pizzaType">
+                <option value="Margherita">Margherita - $10</option>
+                <option value="Pepperoni">Pepperoni - $12</option>
+                <option value="Veggie">Veggie - $11</option>
+                <option value="BBQ Chicken">BBQ Chicken - $14</option>
+            </select>
+
+                <label for="size">Choose Size:</label>
+                <select id="size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+
+                <label for="toppings">Choose Toppings:</label>
+                <input type="checkbox" id="cheese" value="Cheese"> Cheese<br>
+                <input type="checkbox" id="olives" value="Olives"> Olives<br>
+                <input type="checkbox" name="topping" value="Pepperoni"> Pepperoni<br>
+                <input type="checkbox" name="topping" value="Mushrooms"> Mushrooms<br>
+                <input type="checkbox" name="topping" value="Onions"> Onions<br>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" value="1">
+            </form>
+
+            <button onclick="goToCheckout()">Proceed to Checkout</button>
+        </main>
+    </div>
+
+    <!-- Checkout Page -->
+    <div id="checkoutPage" class="page">
+        <header>
+            <h1>Checkout</h1>
+        </header>
+        <main>
+            
+            <div id="orderSummary">
+                <h2>Order Summary</h2>
+                <p id="summaryText">No items selected yet.</p>
+            </div>
+
+            <button onclick="trackOrder()">Track Your Order</button>
+            <p id="trackingInfo" class="hidden">Your order is on the way!</p>
+        </main>
+    </div>
+
+</body>
+</html>
